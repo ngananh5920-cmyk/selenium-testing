@@ -1,4 +1,4 @@
-Có, nếu là README để nộp bài thì phần hiện tại hơi ngắn. Bạn có 
+
 # Selenium Web Testing Assignment
 
 ## Thông tin sinh viên
@@ -198,4 +198,3 @@ Thông qua bài thực hành, đã thực hiện được:
 * Kiểm thử chức năng đăng xuất.
 * Xác nhận hệ thống hoạt động đúng theo yêu cầu.
 
-Kết quả thực thi cho thấy cả 03 test case đều PASS, chứng minh các kịch bản kiểm thử được xây dựng chính xác và hoạt động ổn định trên môi trường thử nghiệm.
