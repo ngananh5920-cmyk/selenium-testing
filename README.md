@@ -1,94 +1,201 @@
+Có, nếu là README để nộp bài thì phần hiện tại hơi ngắn. Bạn có 
 # Selenium Web Testing Assignment
 
-## 1. Giới thiệu
+## Thông tin sinh viên
 
-Bài tập thực hành Selenium WebDriver bằng Python để tự động hóa kiểm thử website.
+* Họ và tên: Phương Ngân
+* Mã sinh viên: 23010450
 
-Website kiểm thử:
+---
 
-https://the-internet.herokuapp.com/login
+# 1. Giới thiệu
 
+Trong quá trình phát triển phần mềm, kiểm thử tự động giúp giảm thời gian kiểm thử thủ công, tăng độ chính xác và đảm bảo chất lượng sản phẩm. Selenium WebDriver là một công cụ phổ biến được sử dụng để tự động hóa các thao tác trên trình duyệt web.
 
-## 2. Công nghệ sử dụng
+Bài thực hành này sử dụng Selenium WebDriver kết hợp với ngôn ngữ Python để xây dựng các kịch bản kiểm thử tự động cho chức năng đăng nhập của website mẫu:
 
-* Python 3.13
-* Selenium 4
-* Google Chrome
-* Visual Studio Code
+[https://the-internet.herokuapp.com/login](https://the-internet.herokuapp.com/login)
 
+Thông qua bài thực hành, sinh viên có thể làm quen với việc:
 
-## 3. Các Test Case
+* Cài đặt và cấu hình Selenium WebDriver.
+* Tương tác với các phần tử trên giao diện web.
+* Tự động nhập dữ liệu vào biểu mẫu.
+* Kiểm tra kết quả trả về của hệ thống.
+* Viết các kịch bản kiểm thử tự động cơ bản.
 
-### TC01 - Login Success
+---
 
-**Mục tiêu:**
-Kiểm tra đăng nhập thành công với tài khoản hợp lệ.
+# 2. Mục tiêu bài thực hành
 
-**Dữ liệu kiểm thử:**
+Mục tiêu của bài thực hành là:
+
+* Tìm hiểu cách hoạt động của Selenium WebDriver.
+* Thực hiện tự động hóa các thao tác đăng nhập trên website.
+* Xây dựng các test case kiểm thử chức năng Login và Logout.
+* Kiểm tra tính đúng đắn của hệ thống thông qua kết quả thực thi.
+* Nâng cao kỹ năng lập trình Python trong lĩnh vực kiểm thử phần mềm.
+
+---
+
+# 3. Môi trường kiểm thử
+
+| Thành phần    | Phiên bản              |
+| ------------- | ---------------------- |
+| Python        | 3.13                   |
+| Selenium      | 4.x                    |
+| Google Chrome | Phiên bản mới nhất     |
+| ChromeDriver  | Tương thích với Chrome |
+| IDE           | Visual Studio Code     |
+| Hệ điều hành  | Windows 10/11          |
+
+---
+
+# 4. Website kiểm thử
+
+Website được sử dụng trong bài thực hành:
+
+[https://the-internet.herokuapp.com/login](https://the-internet.herokuapp.com/login)
+
+Thông tin tài khoản hợp lệ được cung cấp bởi website:
 
 * Username: tomsmith
 * Password: SuperSecretPassword!
 
-**Kết quả mong đợi:**
+Chức năng được kiểm thử:
 
-Người dùng đăng nhập thành công và chuyển đến trang Secure Area.
+* Đăng nhập thành công.
+* Đăng nhập thất bại.
+* Đăng xuất khỏi hệ thống.
 
-**Kết quả thực tế:**
+---
+
+# 5. Các Test Case
+
+## TC01 - Login Success
+
+### Mục tiêu
+
+Kiểm tra khả năng đăng nhập thành công khi người dùng nhập đúng tài khoản và mật khẩu.
+
+### Dữ liệu kiểm thử
+
+* Username: tomsmith
+* Password: SuperSecretPassword!
+
+### Các bước thực hiện
+
+1. Mở trình duyệt Chrome.
+2. Truy cập trang Login.
+3. Nhập Username hợp lệ.
+4. Nhập Password hợp lệ.
+5. Nhấn nút Login.
+
+### Kết quả mong đợi
+
+* Hệ thống đăng nhập thành công.
+* Chuyển hướng tới trang Secure Area.
+* Hiển thị thông báo đăng nhập thành công.
+
+### Kết quả thực tế
 
 PASS
 
+---
 
-### TC02 - Login Failed
+## TC02 - Login Failed
 
-**Mục tiêu:**
-Kiểm tra đăng nhập thất bại với tài khoản không hợp lệ.
+### Mục tiêu
 
-**Dữ liệu kiểm thử:**
+Kiểm tra khả năng xử lý khi người dùng nhập sai thông tin đăng nhập.
+
+### Dữ liệu kiểm thử
 
 * Username: admin
 * Password: 123456
 
-**Kết quả mong đợi:**
+### Các bước thực hiện
 
-Hệ thống hiển thị thông báo lỗi.
+1. Mở trình duyệt Chrome.
+2. Truy cập trang Login.
+3. Nhập Username không hợp lệ.
+4. Nhập Password không hợp lệ.
+5. Nhấn Login.
 
-**Kết quả thực tế:**
+### Kết quả mong đợi
 
-PASS
+* Hệ thống từ chối đăng nhập.
+* Hiển thị thông báo lỗi.
+* Người dùng vẫn ở trang Login.
 
-
-### TC03 - Logout Success
-
-**Mục tiêu:**
-Kiểm tra chức năng đăng xuất.
-
-**Các bước thực hiện:**
-
-1. Đăng nhập thành công.
-2. Chọn Logout.
-
-**Kết quả mong đợi:**
-
-Người dùng quay về trang đăng nhập.
-
-**Kết quả thực tế:**
+### Kết quả thực tế
 
 PASS
-
-
-## 4. Cấu trúc thư mục
-
-* test_login_success.py
-* test_login_fail.py
-* test_logout.py
-* README.md
 
 ---
 
-## 5. Kết luận
+## TC03 - Logout Success
 
-Đã xây dựng thành công 03 test case kiểm thử tự động bằng Selenium:
+### Mục tiêu
 
-* Login Success
-* Login Failed
-* Logout Success
+Kiểm tra chức năng đăng xuất sau khi đăng nhập thành công.
+
+### Các bước thực hiện
+
+1. Đăng nhập bằng tài khoản hợp lệ.
+2. Truy cập Secure Area.
+3. Nhấn nút Logout.
+
+### Kết quả mong đợi
+
+* Phiên đăng nhập kết thúc.
+* Người dùng được chuyển về trang Login.
+* Hiển thị thông báo đăng xuất thành công.
+
+### Kết quả thực tế
+
+PASS
+
+---
+
+# 6. Cấu trúc thư mục
+
+```text
+selenium-testing/
+│
+├── test_login_success.py
+├── test_login_fail.py
+├── test_logout.py
+└── README.md
+```
+
+Mỗi file kiểm thử được xây dựng độc lập nhằm dễ dàng quản lý, thực thi và bảo trì.
+
+---
+
+# 7. Kết quả thực thi
+
+Sau khi thực hiện các kịch bản kiểm thử, toàn bộ test case đều đạt kết quả mong đợi.
+
+| Test Case             | Trạng thái |
+| --------------------- | ---------- |
+| TC01 - Login Success  | PASS       |
+| TC02 - Login Failed   | PASS       |
+| TC03 - Logout Success | PASS       |
+
+Tỷ lệ thành công: 100%
+
+---
+
+# 8. Kết luận
+
+Bài thực hành đã xây dựng thành công hệ thống kiểm thử tự động bằng Selenium WebDriver với Python cho chức năng đăng nhập của website mẫu.
+
+Thông qua bài thực hành, đã thực hiện được:
+
+* Tự động hóa thao tác nhập liệu trên website.
+* Kiểm tra kết quả đăng nhập thành công và thất bại.
+* Kiểm thử chức năng đăng xuất.
+* Xác nhận hệ thống hoạt động đúng theo yêu cầu.
+
+Kết quả thực thi cho thấy cả 03 test case đều PASS, chứng minh các kịch bản kiểm thử được xây dựng chính xác và hoạt động ổn định trên môi trường thử nghiệm.
